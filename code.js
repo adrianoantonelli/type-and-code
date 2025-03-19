@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "Chiappini",
+  testo: "W",
 
   dimensione: 0.8,
   interlinea: 0.7,
