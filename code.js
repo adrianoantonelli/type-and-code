@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "SWSW",
+  testo: "y",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -7,9 +7,9 @@ export const configurazione = {
   percorsoFont: "./assets/InputMonoCondensed-BoldItalic.ttf",
 
   sensibilitàMicrofonoBase: 1,
-  densitàPuntiBase: 1,
+  densitàPuntiBase: 0.3,
 
-  nascondiInterfaccia: false,
+  nascondiInterfaccia: true,
 };
 
 /**
@@ -42,19 +42,12 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
-  const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
+  push;
+  fill("#1B1B1B");
+  stroke(159, 238, 131);
+  ellipse(x, y, map(sin((frameCount / 4) * indice), -1, 1, 0, 80));
 
-  if (indice % 2 == 0) {
-    fill("black");
-  } else {
-    fill("white");
-  }
-  noStroke();
-
-  push();
-  translate(x, y);
-  ellipse(0, 0, size);
-  pop();
+  pop;
 }
 
 /**
@@ -70,6 +63,7 @@ export function caricamentoRisorse() {}
 export function impostazioni() {
   frameRate(30);
   angleMode(DEGREES);
+  rectMode(CENTER);
 }
 
 /**
@@ -77,10 +71,10 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("#1B1B1B");
 
   // [INFO] Rimuovi il commento per disegnare il testo
-  fill("white");
+  fill(159, 238, 131);
   disegnaTesto();
 }
 
