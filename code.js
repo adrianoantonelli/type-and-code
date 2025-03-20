@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "W0RTT1",
+  testo: "APE",
 
   dimensione: 0.8,
   interlinea: 0.7,
